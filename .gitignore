@@ -1,0 +1,12 @@
+.venv/
+dc-venv/
+__pycache__/
+*.py[cod]
+*.log
+*.bak
+*.bak-*
+*.tgz
+*.tar.gz
+*.creds.json
+*.env
+.DS_Store
