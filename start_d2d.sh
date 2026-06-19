@@ -12,4 +12,4 @@ export MESSAGING_BACKEND="${MESSAGING_BACKEND:-zenoh}"
 export ZENOH_LISTEN="${ZENOH_LISTEN:-tcp/0.0.0.0:7447}"
 export DEVICE_TYPE="${DEVICE_TYPE:-quadruped}"
 
-exec python "${PROJECT_ROOT}/puppypi-connect/puppypi_readonly_device.py"
+exec python "${PROJECT_ROOT}/puppy-device-connect/puppypi_readonly_device.py"

@@ -11,4 +11,4 @@ export MESSAGING_BACKEND="${MESSAGING_BACKEND:-nats}"
 export MESSAGING_CREDENTIALS_FILE="${MESSAGING_CREDENTIALS_FILE:-${PROJECT_ROOT}/beta-odin-pi5.creds.json}"
 export DEVICE_TYPE="${DEVICE_TYPE:-quadruped}"
 
-exec python "${PROJECT_ROOT}/puppypi-connect/puppypi_readonly_device.py"
+exec python "${PROJECT_ROOT}/puppy-device-connect/puppypi_readonly_device.py"

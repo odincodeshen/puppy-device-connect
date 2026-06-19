@@ -47,7 +47,7 @@ Use fabric mode when the device should appear in the hosted dashboard.
 ```bash
 cd /home/odin/device-connect
 export MESSAGING_CREDENTIALS_FILE=/home/odin/device-connect/beta-odin-pi5.creds.json
-./puppypi-connect/start_fabric.sh
+./puppy-device-connect/start_fabric.sh
 ```
 
 The credentials file is device-specific and must not be committed.
@@ -58,7 +58,7 @@ Use D2D mode for local network testing with Zenoh discovery:
 
 ```bash
 cd /home/odin/device-connect
-./puppypi-connect/start_d2d.sh
+./puppy-device-connect/start_d2d.sh
 ```
 
 ## RPCs
