@@ -80,9 +80,38 @@ cd /home/odin/device-connect
 ~/.config/systemd/user/pi5-device-connect.service
 ```
 
-Then enable and start it:
+To start it now and also enable automatic startup for future boots:
 
 ```bash
 systemctl --user daemon-reload
 systemctl --user enable --now pi5-device-connect.service
+```
+
+To keep the service installed but prevent it from starting automatically on
+future boots:
+
+```bash
+systemctl --user disable pi5-device-connect.service
+```
+
+This does not stop a service that is already running. Start or stop it manually
+with:
+
+```bash
+systemctl --user start pi5-device-connect.service
+systemctl --user stop pi5-device-connect.service
+```
+
+To disable automatic startup and stop the currently running service in one
+command:
+
+```bash
+systemctl --user disable --now pi5-device-connect.service
+```
+
+Check the current state with:
+
+```bash
+systemctl --user is-enabled pi5-device-connect.service
+systemctl --user is-active pi5-device-connect.service
 ```
