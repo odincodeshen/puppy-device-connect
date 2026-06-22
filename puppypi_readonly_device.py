@@ -14,11 +14,11 @@ from device_connect_edge.drivers import DeviceDriver, emit, rpc
 from device_connect_edge.types import DeviceStatus
 
 
-CONTAINER = os.getenv("PUPPYPI_CONTAINER", "puppypi-ros2")
+CONTAINER = os.getenv("PUPPYPI_CONTAINER", "puppypi_ros2")
 ROS_SETUP = os.getenv("ROS_SETUP", "/opt/ros/humble/setup.bash")
 PUPPYPI_SETUP = os.getenv(
     "PUPPYPI_SETUP",
-    "/workspace/PuppyPi/src/install/setup.bash",
+    "/home/ubuntu/ros2_ws/install/setup.bash",
 )
 
 

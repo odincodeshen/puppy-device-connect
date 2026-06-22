@@ -9,4 +9,6 @@ __pycache__/
 *.tar.gz
 *.creds.json
 *.env
+!profiles/
+!profiles/*.env
 .DS_Store
