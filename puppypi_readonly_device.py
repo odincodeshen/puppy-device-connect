@@ -59,7 +59,7 @@ def _lines(result: dict[str, Any], limit: int = 200, contains: str = "") -> dict
     }
 
 
-class Pi5Ros2ReadOnlyDriver(DeviceDriver):
+class PuppyPiRos2ReadOnlyDriver(DeviceDriver):
     """Expose safe ROS2 inspection RPCs for a PuppyPi ROS2 container."""
 
     device_type = os.getenv("DEVICE_TYPE", "quadruped")
@@ -78,7 +78,7 @@ class Pi5Ros2ReadOnlyDriver(DeviceDriver):
             timeout=10,
         )
         return {
-            "device": "pi5",
+            "device": "puppypi",
             "hostname": socket.gethostname(),
             "container": CONTAINER,
             "container_status": docker["stdout"].strip() if docker["ok"] else "unknown",
@@ -111,7 +111,7 @@ class Pi5Ros2ReadOnlyDriver(DeviceDriver):
         pass
 
     @emit(labels={"category": "diagnostics", "safety": "informational"})
-    async def diagnostic_report(self, level: str, message: str, source: str = "pi5") -> None:
+    async def diagnostic_report(self, level: str, message: str, source: str = "puppypi") -> None:
         """Robot diagnostic report."""
         pass
 
@@ -157,10 +157,10 @@ class Pi5Ros2ReadOnlyDriver(DeviceDriver):
 async def main() -> None:
     device_id = os.getenv("DEVICE_ID")
     if not device_id and not os.getenv("MESSAGING_CREDENTIALS_FILE"):
-        device_id = "pi5-001"
+        device_id = "puppypi-001"
 
     runtime = DeviceRuntime(
-        driver=Pi5Ros2ReadOnlyDriver(),
+        driver=PuppyPiRos2ReadOnlyDriver(),
         device_id=device_id,
     )
     await runtime.run()

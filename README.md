@@ -46,7 +46,7 @@ Use fabric mode when the device should appear in the hosted dashboard.
 
 ```bash
 cd /home/odin/device-connect
-export MESSAGING_CREDENTIALS_FILE=/home/odin/device-connect/beta-odin-pi5.creds.json
+export MESSAGING_CREDENTIALS_FILE=/home/odin/device-connect/beta-puppypi.creds.json
 ./puppy-device-connect/start_fabric.sh
 ```
 
@@ -77,41 +77,41 @@ cd /home/odin/device-connect
 `puppypi-device-connect.service.example` is an example user service. Copy it to:
 
 ```bash
-~/.config/systemd/user/pi5-device-connect.service
+~/.config/systemd/user/puppypi-device-connect.service
 ```
 
 To start it now and also enable automatic startup for future boots:
 
 ```bash
 systemctl --user daemon-reload
-systemctl --user enable --now pi5-device-connect.service
+systemctl --user enable --now puppypi-device-connect.service
 ```
 
 To keep the service installed but prevent it from starting automatically on
 future boots:
 
 ```bash
-systemctl --user disable pi5-device-connect.service
+systemctl --user disable puppypi-device-connect.service
 ```
 
 This does not stop a service that is already running. Start or stop it manually
 with:
 
 ```bash
-systemctl --user start pi5-device-connect.service
-systemctl --user stop pi5-device-connect.service
+systemctl --user start puppypi-device-connect.service
+systemctl --user stop puppypi-device-connect.service
 ```
 
 To disable automatic startup and stop the currently running service in one
 command:
 
 ```bash
-systemctl --user disable --now pi5-device-connect.service
+systemctl --user disable --now puppypi-device-connect.service
 ```
 
 Check the current state with:
 
 ```bash
-systemctl --user is-enabled pi5-device-connect.service
-systemctl --user is-active pi5-device-connect.service
+systemctl --user is-enabled puppypi-device-connect.service
+systemctl --user is-active puppypi-device-connect.service
 ```
